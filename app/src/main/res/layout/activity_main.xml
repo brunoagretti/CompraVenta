@@ -26,7 +26,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
-            android:autofillHints="" />
+             />
 
         <TextView
             android:id="@+id/descripcionTV"
@@ -42,7 +42,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
-            android:autofillHints="" />
+             />
 
         <TextView
             android:id="@+id/correoTV"
@@ -58,7 +58,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
-            android:autofillHints="" />
+             />
 
         <TextView
             android:id="@+id/precioTV"
@@ -74,7 +74,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
-            android:autofillHints="" />
+             />
 
         <TextView
             android:id="@+id/categoriaTV"
@@ -122,7 +122,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
-            android:autofillHints="" />
+             />
 
         <CheckBox
             android:id="@+id/tycCB"
