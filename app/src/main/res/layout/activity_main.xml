@@ -2,10 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@android:style/Widget.Holo.Light.ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:ignore="SpeakableTextPresentCheck" >
+    tools:ignore="SpeakableTextPresentCheck">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,127 +17,139 @@
             android:id="@+id/tituloPublicacionTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/titulo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <EditText
             android:id="@+id/tituloET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:hint="@string/titulo_hint"
             android:minHeight="48dp"
-            android:text="Name"
-             />
+            android:autoSizeTextType="uniform"/>
 
         <TextView
             android:id="@+id/descripcionTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/descripcion"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <EditText
             android:id="@+id/descripcionET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Name"
-             />
+            android:hint="@string/descripcion_hint"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/correoTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/correo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <EditText
             android:id="@+id/correoET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Name"
-             />
+            android:hint="@string/correo_hint"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/precioTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/precio"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <EditText
             android:id="@+id/precioET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Name"
-             />
+            android:hint="@string/precio_hint"
+            android:inputType="number"
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/categoriaTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/categoria"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Spinner
             android:id="@+id/categoriaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:entries="@array/opciones_categoria"
+            tools:ignore="SpeakableTextPresentCheck"
+        />
 
         <Switch
             android:id="@+id/descuentoSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Switch" />
+            android:text="@string/descuento" />
 
         <SeekBar
             android:id="@+id/descuentoSB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+             />
 
         <CheckBox
             android:id="@+id/retiroCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="CheckBox" />
+            android:text="@string/retiro"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/direccionRetiroTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/direccion_retiro"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/direccionRetiroET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/direccion_retiro_hint"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name"
-             />
+            android:visibility="gone" />
 
         <CheckBox
             android:id="@+id/tycCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="CheckBox" />
+            android:text="@string/terminos"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
             android:id="@+id/publicarButton"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
+            android:layout_height="60dp"
+            android:text="@string/boton_publicar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>
