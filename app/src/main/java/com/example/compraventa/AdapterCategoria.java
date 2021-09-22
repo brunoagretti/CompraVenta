@@ -71,8 +71,6 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.View
                     intent.putExtras(bundle);
                     contexto.startActivity(intent);
                 }
-
-
             });
 
 

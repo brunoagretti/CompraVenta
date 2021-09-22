@@ -2,6 +2,7 @@ package com.example.compraventa;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,9 +32,44 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox aceptoTyC;
     private Button botonPublicar;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onSaveInstanceState(Bundle instaciaGuardada) {
+        super.onSaveInstanceState(instaciaGuardada);
+
+        instaciaGuardada.putString("titulo",etTitulo.getText().toString());
+        instaciaGuardada.putString("correo",etCorreo.getText().toString());
+        instaciaGuardada.putString("descripcion",etDescripcion.getText().toString());
+        instaciaGuardada.putString("direccion",etDireccion.getText().toString());
+        instaciaGuardada.putString("precio",etPrecio.getText().toString());
+        instaciaGuardada.putBoolean("retiro", retiroEnPersona.isChecked());
+        instaciaGuardada.putBoolean("condiciones", aceptoTyC.isChecked());
+        instaciaGuardada.putBoolean("descuento", ofrecerDescuento.isChecked());
+        instaciaGuardada.putInt("progresoBarra", barritaDescuento.getProgress());
+
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle instaciaGuardada) {
+        super.onRestoreInstanceState(instaciaGuardada);
+
+        etTitulo.setText(instaciaGuardada.getString("titulo"));
+        etCorreo.setText(instaciaGuardada.getString("correo"));
+        etDescripcion.setText(instaciaGuardada.getString("descripcion"));
+        etDireccion.setText(instaciaGuardada.getString("direccion"));
+        etPrecio.setText(instaciaGuardada.getString("precio"));
+        retiroEnPersona.setChecked(instaciaGuardada.getBoolean("retiro"));
+        aceptoTyC.setChecked(instaciaGuardada.getBoolean("condiciones"));
+        ofrecerDescuento.setChecked(instaciaGuardada.getBoolean("descuento"));
+        barritaDescuento.setProgress(instaciaGuardada.getInt("progresoBarra"));
+
+    }
+
+
+    @Override
+    protected void onCreate(Bundle instaciaGuardada) {
+        super.onCreate(instaciaGuardada);
         setContentView(R.layout.activity_main);
 
 
@@ -113,6 +149,15 @@ public class MainActivity extends AppCompatActivity {
                     botonPublicar.setClickable(false);
                     botonPublicar.setAlpha(0.5f);
                 }
+            }
+        });
+
+        botonCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CategoriasActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                getApplicationContext().startActivity(intent);
             }
         });
 
