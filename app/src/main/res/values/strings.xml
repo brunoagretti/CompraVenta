@@ -17,11 +17,12 @@
     <string name="terminos2"><a href="https://www.google.com/">Términos y condiciones</a></string>
     <string name="boton_publicar">Publicar</string>
     <string-array name="opciones_categoria">
-        <item>INDUMENTARIA</item>
-        <item>ELECTRONICA</item>
-        <item>ENTRETENIMIENTO</item>
-        <item>JARDIN</item>
-        <item>VEHICULOS</item>
-        <item>JUGUETES</item>
+        <item>INDUMENTARIA👚</item>
+        <item>ELECTRONICA💻</item>
+        <item>ENTRETENIMIENTO⚽</item>
+        <item>JARDIN🌼</item>
+        <item>VEHICULOS🚗</item>
+        <item>JUGUETES🪀</item>
+
     </string-array>
 </resources>
