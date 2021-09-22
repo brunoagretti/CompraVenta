@@ -63,7 +63,7 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.View
                 @Override
                 public void onClick(View view) {
                     Log.i("PRESIONAR","Presionó "+c.getNombre()); //TODO remover esto
-                    Intent intent = new Intent(contexto, MainActivity.class);
+                    Intent intent = new Intent(contexto, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("categoria",c);

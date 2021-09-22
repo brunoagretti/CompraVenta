@@ -84,14 +84,12 @@
             android:text="@string/categoria"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <Spinner
-            android:id="@+id/categoriaSpinner"
+        <Button
+            android:id="@+id/botonCategoriaID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/tamanioEditText"
-            android:entries="@array/opciones_categoria"
-            tools:ignore="SpeakableTextPresentCheck"
-        />
+            android:text="@string/boton_categoria"
+            android:minHeight="@dimen/tamanioEditText" />
 
         <Switch
             android:id="@+id/descuentoSwitch"

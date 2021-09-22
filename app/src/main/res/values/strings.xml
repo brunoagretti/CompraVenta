@@ -16,13 +16,6 @@
     <string name="terminos">Acepto los <a href="https://www.bbc.com/mundo/noticias-44496050">términos y condiciones</a></string>
     <string name="terminos2"><a href="https://www.google.com/">Términos y condiciones</a></string>
     <string name="boton_publicar">Publicar</string>
-    <string-array name="opciones_categoria">
-        <item>INDUMENTARIA👚</item>
-        <item>ELECTRONICA💻</item>
-        <item>ENTRETENIMIENTO⚽</item>
-        <item>JARDIN🌼</item>
-        <item>VEHICULOS🚗</item>
-        <item>JUGUETES🪀</item>
+    <string name="boton_categoria">Seleccionar categoría</string>
 
-    </string-array>
 </resources>

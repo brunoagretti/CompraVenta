@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etCorreo;
     private EditText etPrecio;
     private EditText etDireccion;
-    private Spinner categoria;
+    private Button botonCategoria;
     private Switch ofrecerDescuento;
     private SeekBar barritaDescuento;
     private CheckBox retiroEnPersona;
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         etCorreo = (EditText) findViewById(R.id.correoET);
         etPrecio = (EditText) findViewById(R.id.precioET);
         etDireccion = (EditText) findViewById(R.id.direccionRetiroET);
-        categoria = (Spinner) findViewById(R.id.categoriaSpinner);
+        botonCategoria = (Button) findViewById(R.id.botonCategoriaID);
         ofrecerDescuento = (Switch) findViewById(R.id.descuentoSwitch);
         barritaDescuento = (SeekBar) findViewById(R.id.descuentoSB);
         retiroEnPersona = (CheckBox) findViewById(R.id.retiroCB);
@@ -131,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         CategoriaVo categoriaSeleccionada = null;
         if(categoriaRecibida!=null){
             categoriaSeleccionada=(CategoriaVo) categoriaRecibida.getSerializable("categoria");
+            botonCategoria.setText(categoriaSeleccionada.getNombre());
         }
 
 
