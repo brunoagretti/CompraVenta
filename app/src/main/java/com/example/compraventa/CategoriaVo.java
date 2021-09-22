@@ -1,6 +1,8 @@
 package com.example.compraventa;
 
-public class CategoriaVo {
+import java.io.Serializable;
+
+public class CategoriaVo implements Serializable {
     private String id;
     private String nombre;
     private int imagen;
