@@ -127,6 +127,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Bundle categoriaRecibida = getIntent().getExtras();
+        CategoriaVo categoriaSeleccionada = null;
+        if(categoriaRecibida!=null){
+            categoriaSeleccionada=(CategoriaVo) categoriaRecibida.getSerializable("categoria");
+        }
+
+
+
     }
 
     //Cerrar teclado en caso de estar abierto

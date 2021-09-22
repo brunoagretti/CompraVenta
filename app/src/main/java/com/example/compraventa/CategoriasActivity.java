@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class CategoriasActivity extends AppCompatActivity {
 
         llenarCategorias();
 
-        AdapterCategoria adapterCategoria = new AdapterCategoria(categorias);
+        AdapterCategoria adapterCategoria = new AdapterCategoria(getApplicationContext(),categorias);
         recyclerCategoria.setAdapter(adapterCategoria);
 
 

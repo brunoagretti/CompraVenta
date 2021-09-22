@@ -1,6 +1,8 @@
 package com.example.compraventa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,9 +17,10 @@ import java.util.ArrayList;
 public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.ViewHolderCategoria>{
 
     private ArrayList<CategoriaVo> categorias;
-
-    public AdapterCategoria(ArrayList<CategoriaVo> categorias) {
+    private Context contexto;
+    public AdapterCategoria(Context contexto, ArrayList<CategoriaVo> categorias) {
         this.categorias = categorias;
+        this.contexto = contexto;
     }
 
     @Override
@@ -59,8 +62,14 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.View
             layoutHorizontal.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.i("PRESIONAR","Presionó "+c.getNombre());
+                    Log.i("PRESIONAR","Presionó "+c.getNombre()); //TODO remover esto
+                    Intent intent = new Intent(contexto, MainActivity.class);
 
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("categoria",c);
+
+                    intent.putExtras(bundle);
+                    contexto.startActivity(intent);
                 }
 
 
