@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/titulo_hint"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:autoSizeTextType="uniform"/>
 
         <TextView
@@ -43,7 +43,7 @@
             android:ems="10"
             android:hint="@string/descripcion_hint"
             android:inputType="textMultiLine"
-            android:minHeight="48dp" />
+            android:minHeight="@dimen/tamanioEditText" />
 
         <TextView
             android:id="@+id/correoTV"
@@ -59,7 +59,7 @@
             android:ems="10"
             android:hint="@string/correo_hint"
             android:inputType="textEmailAddress"
-            android:minHeight="48dp" />
+            android:minHeight="@dimen/tamanioEditText" />
 
         <TextView
             android:id="@+id/precioTV"
@@ -74,8 +74,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/precio_hint"
-            android:inputType="number"
-            android:minHeight="48dp" />
+            android:inputType="numberDecimal"
+            android:minHeight="@dimen/tamanioEditText" />
 
         <TextView
             android:id="@+id/categoriaTV"
@@ -88,7 +88,7 @@
             android:id="@+id/categoriaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:entries="@array/opciones_categoria"
             tools:ignore="SpeakableTextPresentCheck"
         />
@@ -97,7 +97,7 @@
             android:id="@+id/descuentoSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:text="@string/descuento" />
 
         <SeekBar
@@ -111,7 +111,7 @@
             android:id="@+id/retiroCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:text="@string/retiro"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -130,14 +130,14 @@
             android:ems="10"
             android:hint="@string/direccion_retiro_hint"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:visibility="gone" />
 
         <CheckBox
             android:id="@+id/tycCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/tamanioEditText"
             android:text="@string/terminos"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -145,11 +145,14 @@
             android:id="@+id/publicarButton"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/altoButton"
+            android:enabled="true"
             android:text="@string/boton_publicar"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:clickable="false"
+            android:alpha="0.5"/>
 
     </LinearLayout>
 </ScrollView>

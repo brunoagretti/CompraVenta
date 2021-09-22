@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tamanioEditText">48dp</dimen>
+    <dimen name="altoButton">60dp</dimen>
+
+</resources>
