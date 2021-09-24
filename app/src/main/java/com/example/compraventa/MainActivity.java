@@ -171,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Hacemos el botón publicar no-clickeable por defecto
+        botonPublicar.setClickable(false);
+        botonPublicar.setAlpha(0.5f);
+
         Bundle categoriaRecibida = getIntent().getExtras();
         CategoriaVo categoriaSeleccionada = null;
         if(categoriaRecibida!=null){
