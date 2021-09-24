@@ -62,7 +62,7 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.View
             layoutHorizontal.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.i("PRESIONAR","Presionó "+c.getNombre()); //TODO remover esto
+                    Log.i("PRESIONAR","Presionó "+c.getNombre()); //TODO remover mensaje de debug
                     Intent intent = new Intent(contexto, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     Bundle bundle = new Bundle();

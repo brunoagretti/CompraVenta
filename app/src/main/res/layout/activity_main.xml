@@ -11,14 +11,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/tituloPublicacionTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titulo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/tituloET"
@@ -34,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/descripcion"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/descripcionET"
@@ -50,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/correo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/correoET"
@@ -66,7 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/precio"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/precioET"
@@ -82,21 +87,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/categoria"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/botonCategoriaID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/boton_categoria"
-            android:minHeight="@dimen/tamanioEditText" />
+            android:minHeight="@dimen/tamanioEditText"
+            android:text="@string/boton_categoria" />
 
         <Switch
             android:id="@+id/descuentoSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="@dimen/tamanioEditText"
-            android:text="@string/descuento" />
+            android:text="@string/descuento"
+            android:textColor="@color/black" />
 
         <SeekBar
             android:id="@+id/descuentoSB"
@@ -119,6 +126,7 @@
             android:layout_height="wrap_content"
             android:text="@string/direccion_retiro"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
             android:visibility="gone" />
 
         <EditText

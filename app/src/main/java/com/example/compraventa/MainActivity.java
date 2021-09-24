@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -172,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Hacemos el botón publicar no-clickeable por defecto
+        //Esto debemos hacerlo despues de setear el listener en el botón
         botonPublicar.setClickable(false);
         botonPublicar.setAlpha(0.5f);
 
@@ -180,6 +182,9 @@ public class MainActivity extends AppCompatActivity {
         if(categoriaRecibida!=null){
             categoriaSeleccionada=(CategoriaVo) categoriaRecibida.getSerializable("categoria");
             botonCategoria.setText(categoriaSeleccionada.getNombre());
+            //Seteo ícono a la izquierda del boton
+            botonCategoria.setCompoundDrawablesWithIntrinsicBounds(getDrawable(categoriaSeleccionada.getImagen()),null,null,null);
+            Log.i("Imagen",""+categoriaSeleccionada.getImagen()); //TODO remover esto
         }
 
 
