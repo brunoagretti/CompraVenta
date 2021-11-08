@@ -1,5 +1,6 @@
 package com.example.compraventa;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +18,10 @@ import java.util.ArrayList;
 public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.ViewHolderCategoria>{
 
     private ArrayList<CategoriaVo> categorias;
-    private Context contexto;
-    public AdapterCategoria(Context contexto, ArrayList<CategoriaVo> categorias) {
+    private Activity padre;
+    public AdapterCategoria(Activity padre, ArrayList<CategoriaVo> categorias) {
         this.categorias = categorias;
-        this.contexto = contexto;
+        this.padre = padre;
     }
 
     @Override
@@ -63,13 +64,15 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.View
                 @Override
                 public void onClick(View view) {
                     Log.i("PRESIONAR","Presionó "+c.getNombre()); //TODO remover mensaje de debug
-                    Intent intent = new Intent(contexto, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    Intent intent = new Intent(padre, MainActivity.class);
 
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("categoria",c);
 
                     intent.putExtras(bundle);
-                    contexto.startActivity(intent);
+                    padre.setResult(0,intent);
+                    padre.finish();
+
                 }
             });
 

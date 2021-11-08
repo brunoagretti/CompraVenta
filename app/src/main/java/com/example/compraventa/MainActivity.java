@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox aceptoTyC;
     private Button botonPublicar;
 
+    Bundle categoriaRecibida;
+    CategoriaVo categoriaSeleccionada;
+
 
     @Override
     public void onSaveInstanceState(Bundle instaciaGuardada) {
@@ -67,12 +70,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data!=null){
+            categoriaSeleccionada=(CategoriaVo) data.getExtras().getSerializable("categoria");
+            botonCategoria.setText(categoriaSeleccionada.getNombre());
+            //Seteo ícono a la izquierda del boton
+            botonCategoria.setCompoundDrawablesWithIntrinsicBounds(getDrawable(categoriaSeleccionada.getImagen()),null,null,null);
+        }
+
+    }
+
 
     @Override
     protected void onCreate(Bundle instaciaGuardada) {
         super.onCreate(instaciaGuardada);
         setContentView(R.layout.activity_main);
 
+
+        Bundle categoriaRecibida = getIntent().getExtras();
+        CategoriaVo categoriaSeleccionada = null;
 
         tvDireccionRetiro = (TextView) findViewById(R.id.direccionRetiroTV);
         etTitulo = (EditText) findViewById(R.id.tituloET);
@@ -156,9 +174,9 @@ public class MainActivity extends AppCompatActivity {
         botonCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CategoriasActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(getApplicationContext(), CategoriasActivity.class);
+                startActivityForResult(intent,0);
 
-                getApplicationContext().startActivity(intent);
             }
         });
 
@@ -177,15 +195,7 @@ public class MainActivity extends AppCompatActivity {
         botonPublicar.setClickable(false);
         botonPublicar.setAlpha(0.5f);
 
-        Bundle categoriaRecibida = getIntent().getExtras();
-        CategoriaVo categoriaSeleccionada = null;
-        if(categoriaRecibida!=null){
-            categoriaSeleccionada=(CategoriaVo) categoriaRecibida.getSerializable("categoria");
-            botonCategoria.setText(categoriaSeleccionada.getNombre());
-            //Seteo ícono a la izquierda del boton
-            botonCategoria.setCompoundDrawablesWithIntrinsicBounds(getDrawable(categoriaSeleccionada.getImagen()),null,null,null);
-            Log.i("Imagen",""+categoriaSeleccionada.getImagen()); //TODO remover esto
-        }
+
 
 
 

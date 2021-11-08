@@ -28,8 +28,7 @@ public class CategoriasActivity extends AppCompatActivity {
         recyclerCategoria.setLayoutManager(new LinearLayoutManager(this));
 
         llenarCategorias();
-
-        AdapterCategoria adapterCategoria = new AdapterCategoria(getApplicationContext(),categorias);
+        AdapterCategoria adapterCategoria = new AdapterCategoria(this,categorias);//TODO aca esta mal el contexto?
         recyclerCategoria.setAdapter(adapterCategoria);
 
 
